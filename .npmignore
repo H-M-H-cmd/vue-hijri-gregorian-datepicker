@@ -55,6 +55,24 @@ examples
 demo
 docs
 
+# Screenshots and images (only for GitHub README, not for npm package)
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Documentation files (only for GitHub, not needed in npm package)
+ADDING_IMAGES.md
+GITHUB_SETUP.md
+PUBLISH_GUIDE.md
+COMPARISON.md
+IMPLEMENTATION_TEST.md
+FINAL_VERSION.md
+PACKAGE_SUMMARY.md
+example.html
+
 # Package manager lock files (optional - some prefer to include them)
 package-lock.json
 yarn.lock
