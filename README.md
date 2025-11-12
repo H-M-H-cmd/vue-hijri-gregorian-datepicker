@@ -5,22 +5,42 @@ A standalone, fully self-contained Vue 3 date picker component with support for 
 **🌍 Now with bilingual support: Arabic & English!**
 
 [![npm version](https://img.shields.io/npm/v/vue-hijri-gregorian-datepicker.svg)](https://www.npmjs.com/package/vue-hijri-gregorian-datepicker)
+[![npm downloads](https://img.shields.io/npm/dm/vue-hijri-gregorian-datepicker.svg)](https://www.npmjs.com/package/vue-hijri-gregorian-datepicker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vue 3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/vue-hijri-gregorian-datepicker)](https://bundlephobia.com/package/vue-hijri-gregorian-datepicker)
 
-![Vue Hijri-Gregorian Date Picker Demo](https://via.placeholder.com/800x400.png?text=Vue+Hijri-Gregorian+Date+Picker)
+---
+
+## 📸 Preview
+
+<div align="center">
+
+![Vue Hijri-Gregorian Date Picker Demo](https://raw.githubusercontent.com/hamdymohamedak/vue-hijri-gregorian-datepicker/main/screenshots/demo-preview.png)
+
+*A beautiful, touch-optimized date picker with Hijri and Gregorian calendar support*
+
+</div>
+
+<!-- Want to add more screenshots or GIFs? See ADDING_IMAGES.md for complete instructions -->
+
+---
 
 ## 📋 Table of Contents
 
+- [Preview](#-preview)
 - [Features](#-features)
 - [Why This Package?](#-why-this-package)
 - [Installation](#-installation)
+- [Quick Start](#-quick-start)
 - [Usage](#-usage)
 - [API Reference](#-api-reference)
 - [DateConverter Utility](#️-dateconverter-utility)
 - [Styling](#-styling)
-- [Examples](#-real-world-examples)
+- [Real-World Examples](#-real-world-examples)
+- [Advanced Configuration](#-advanced-configuration)
 - [Browser Support](#-browser-support)
+- [How to Add Images](#-how-to-add-images-to-readme)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -69,33 +89,51 @@ Building applications for Islamic countries or Muslim communities requires prope
 
 ## 📦 Installation
 
-### Option 1: Copy Files Directly
-
-Simply copy `InputDate.vue` and `DateConverter.js` into your project:
-
-```
-your-project/
-├── components/
-│   └── InputDate.vue
-└── utils/
-    └── DateConverter.js
-```
-
-Make sure to update the import path in `InputDate.vue` if needed:
-
-```javascript
-import DateConverter from './DateConverter.js'; // Update this path
-```
-
-### Option 2: As a Package (if published to npm)
+Install via npm, yarn, or pnpm:
 
 ```bash
 npm install vue-hijri-gregorian-datepicker
-# or
+```
+
+```bash
 yarn add vue-hijri-gregorian-datepicker
-# or
+```
+
+```bash
 pnpm add vue-hijri-gregorian-datepicker
 ```
+
+**That's it!** Zero configuration needed. The package has no external dependencies except Vue 3.
+
+---
+
+## ⚡ Quick Start
+
+Get up and running in 2 minutes:
+
+```vue
+<script setup>
+import { ref } from 'vue';
+import InputDate from 'vue-hijri-gregorian-datepicker';
+
+const selectedDate = ref('');
+</script>
+
+<template>
+  <InputDate
+    name="birth_date"
+    lang="en"
+    v-model="selectedDate"
+    placeholder="Select date"
+  />
+
+  <p v-if="selectedDate">Selected: {{ selectedDate }}</p>
+</template>
+```
+
+**Done!** You now have a fully functional date picker with Hijri and Gregorian calendar support.
+
+---
 
 ## 🚀 Usage
 
@@ -717,13 +755,122 @@ const yearConfig = computed(() => {
 
 ## 🐛 Known Issues
 
-None at the moment. Report issues by creating a GitHub issue or contacting the maintainer.
+None at the moment. Report issues by [creating a GitHub issue](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker/issues).
+
+---
+
+## 📸 How to Add Images to README
+
+Want to add screenshots or demo GIFs? Follow these steps:
+
+### Method 1: Using GitHub Repository (Recommended)
+
+1. **Create a `screenshots` folder** in your repository:
+   ```bash
+   mkdir screenshots
+   ```
+
+2. **Add your images** (PNG, JPG, or GIF files):
+   ```bash
+   screenshots/
+   ├── desktop-demo.gif
+   ├── mobile-demo.gif
+   └── calendar-switch.gif
+   ```
+
+3. **Commit and push**:
+   ```bash
+   git add screenshots/
+   git commit -m "Add demo screenshots"
+   git push origin main
+   ```
+
+4. **Update README.md** with the correct paths:
+   ```markdown
+   ![Desktop Demo](https://raw.githubusercontent.com/hamdymohamedak/vue-hijri-gregorian-datepicker/main/screenshots/desktop-demo.gif)
+   ```
+
+### Method 2: Using External Image Hosting
+
+Upload your images to:
+- [Imgur](https://imgur.com/)
+- [GitHub Issues](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker/issues/new) (drag & drop, copy link)
+- [Cloudinary](https://cloudinary.com/)
+
+Then use the URL:
+```markdown
+![Demo](https://i.imgur.com/your-image-id.gif)
+```
+
+### Creating Demo GIFs
+
+**Tools to record GIFs:**
+- **Windows**: [ScreenToGif](https://www.screentogif.com/) (Free)
+- **Mac**: [Kap](https://getkap.co/) (Free)
+- **Linux**: [Peek](https://github.com/phw/peek) (Free)
+- **Online**: [RecordScreen.io](https://recordscreen.io/) (Free)
+
+**Tips for good demos:**
+1. Keep it short (5-10 seconds)
+2. Show one feature per GIF
+3. Use normal speed (not too fast)
+4. Optimize file size with [ezgif.com](https://ezgif.com/optimize)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit your changes**: `git commit -m 'Add amazing feature'`
+4. **Push to the branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+### Development Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker.git
+
+# Navigate to directory
+cd vue-hijri-gregorian-datepicker
+
+# The component is standalone - no dependencies to install!
+# Just open InputDate.vue and start editing
+```
+
+---
 
 ## 📚 Additional Resources
 
+- [npm Package](https://www.npmjs.com/package/vue-hijri-gregorian-datepicker)
+- [GitHub Repository](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker)
+- [Report Issues](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker/issues)
 - [Hijri Calendar on Wikipedia](https://en.wikipedia.org/wiki/Islamic_calendar)
 - [Vue 3 Documentation](https://vuejs.org/)
 
 ---
 
-Made with ❤️ for the Vue community
+## 📝 License
+
+MIT License © 2025 [Hamdy Mohammed](https://github.com/hamdymohamedak)
+
+See [LICENSE](./LICENSE) for details.
+
+---
+
+## ⭐ Show Your Support
+
+If this package helped you, please give it a star on [GitHub](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker)! ⭐
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Hamdy Mohammed](https://github.com/hamdymohamedak)**
+
+[npm](https://www.npmjs.com/package/vue-hijri-gregorian-datepicker) • [GitHub](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker) • [Issues](https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker/issues)
+
+</div>
