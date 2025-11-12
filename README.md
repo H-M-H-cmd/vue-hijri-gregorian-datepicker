@@ -16,13 +16,13 @@ A standalone, fully self-contained Vue 3 date picker component with support for 
 
 <div align="center">
 
-![alt text](image.png)
+![Vue Hijri-Gregorian Date Picker Demo](https://raw.githubusercontent.com/H-M-H-cmd/vue-hijri-gregorian-datepicker/main/screenshots/demo-preview.png)
 
 *A beautiful, touch-optimized date picker with Hijri and Gregorian calendar support*
 
 </div>
 
-<!-- Want to add more screenshots or GIFs? See ADDING_IMAGES.md for complete instructions -->
+<!-- Want to add more screenshots? Add them to the screenshots/ folder and they'll display here but won't be included in the npm package -->
 
 ---
 
