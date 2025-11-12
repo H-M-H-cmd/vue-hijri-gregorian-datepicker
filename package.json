@@ -3,14 +3,25 @@
   "version": "1.0.2",
   "description": "A standalone Vue 3 date picker component with bilingual support (Arabic & English) for both Gregorian and Hijri (Islamic) calendars. Zero external dependencies except Vue 3. Perfect for Islamic applications and Middle East markets.",
   "main": "InputDate.vue",
+  "types": "index.d.ts",
   "type": "module",
   "exports": {
-    ".": "./InputDate.vue",
-    "./DateConverter": "./DateConverter.js"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./InputDate.vue",
+      "default": "./InputDate.vue"
+    },
+    "./DateConverter": {
+      "types": "./DateConverter.d.ts",
+      "import": "./DateConverter.js",
+      "default": "./DateConverter.js"
+    }
   },
   "files": [
     "InputDate.vue",
     "DateConverter.js",
+    "index.d.ts",
+    "DateConverter.d.ts",
     "README.md",
     "LICENSE",
     "BILINGUAL_SUPPORT.md"
@@ -19,6 +30,9 @@
     "vue",
     "vue3",
     "vuejs",
+    "nuxt",
+    "nuxt3",
+    "typescript",
     "datepicker",
     "date-picker",
     "hijri",
