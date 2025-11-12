@@ -1,6 +1,6 @@
 {
   "name": "vue-hijri-gregorian-datepicker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A standalone Vue 3 date picker component with bilingual support (Arabic & English) for both Gregorian and Hijri (Islamic) calendars. Zero external dependencies except Vue 3. Perfect for Islamic applications and Middle East markets.",
   "main": "InputDate.vue",
   "types": "index.d.ts",
