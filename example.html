@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Hijri-Gregorian Date Picker - Example</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      background: #f9fafb;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #1f2937;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .example-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-radius: 8px;
+    }
+
+    .example-section h2 {
+      color: #374151;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #e0f2fe;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.875rem;
+    }
+
+    .result-label {
+      font-weight: 600;
+      color: #0369a1;
+      margin-bottom: 0.5rem;
+    }
+
+    .code {
+      background: #1f2937;
+      color: #10b981;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>🗓️ Vue Hijri-Gregorian Date Picker</h1>
+
+      <div class="example-section">
+        <h2>مثال 1: تاريخ واحد (ميلادي)</h2>
+        <input-date
+          name="example1"
+          v-model="date1"
+          placeholder="اختر التاريخ"
+          label="تاريخ الميلاد"
+        />
+        <div v-if="date1" class="result">
+          <div class="result-label">التاريخ المحدد:</div>
+          {{ date1 }}
+        </div>
+      </div>
+
+      <div class="example-section">
+        <h2>مثال 2: تاريخ واحد (هجري)</h2>
+        <input-date
+          name="example2"
+          v-model="date2"
+          :default-calendar="'hijri'"
+          placeholder="اختر التاريخ"
+          label="تاريخ البداية"
+        />
+        <div v-if="date2" class="result">
+          <div class="result-label">التاريخ الهجري:</div>
+          {{ date2 }}
+        </div>
+      </div>
+
+      <div class="example-section">
+        <h2>مثال 3: تاريخ بالتقويمين</h2>
+        <input-date
+          name="example3"
+          v-model:hijri-date="hijriDate"
+          v-model:gregorian-date="gregorianDate"
+          placeholder="اختر التاريخ"
+          label="تاريخ"
+        />
+        <div v-if="hijriDate || gregorianDate" class="result">
+          <div class="result-label">التاريخ الهجري:</div>
+          {{ hijriDate }}
+          <div class="result-label" style="margin-top: 0.5rem;">التاريخ الميلادي:</div>
+          {{ gregorianDate }}
+        </div>
+      </div>
+
+      <div class="example-section">
+        <h2>مثال 4: اختيار اليوم تلقائياً</h2>
+        <input-date
+          name="example4"
+          v-model="date4"
+          :auto-select-today="true"
+          placeholder="اختر التاريخ"
+          label="تاريخ اليوم"
+        />
+        <div v-if="date4" class="result">
+          <div class="result-label">التاريخ:</div>
+          {{ date4 }}
+        </div>
+      </div>
+
+      <div class="example-section">
+        <h2>استخدام DateConverter مباشرة</h2>
+        <div class="code">
+          import DateConverter from './DateConverter.js';<br><br>
+          // تحويل من ميلادي إلى هجري<br>
+          DateConverter.gregorianToHijri('2023-08-20');<br>
+          // النتيجة: "1445-02-04"<br><br>
+          // تحويل من هجري إلى ميلادي<br>
+          DateConverter.hijriToGregorian('1445-02-04');<br>
+          // النتيجة: "2023-08-20"
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import InputDate from './InputDate.vue';
+
+    const { createApp } = Vue;
+
+    createApp({
+      components: {
+        InputDate
+      },
+      data() {
+        return {
+          date1: '',
+          date2: '',
+          hijriDate: '',
+          gregorianDate: '',
+          date4: ''
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

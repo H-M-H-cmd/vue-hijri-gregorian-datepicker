@@ -1,0 +1,61 @@
+# Development files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test files
+*.test.js
+*.spec.js
+__tests__
+tests
+
+# Build files
+.cache
+.parcel-cache
+.next
+.nuxt
+.vuepress/dist
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+
+# Examples and demos (if any)
+examples
+demo
+docs
+
+# Package manager lock files (optional - some prefer to include them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,0 +1,69 @@
+{
+  "name": "vue-hijri-gregorian-datepicker",
+  "version": "1.0.0",
+  "description": "A standalone Vue 3 date picker component with bilingual support (Arabic & English) for both Gregorian and Hijri (Islamic) calendars. Zero external dependencies except Vue 3. Perfect for Islamic applications and Middle East markets.",
+  "main": "InputDate.vue",
+  "type": "module",
+  "exports": {
+    ".": "./InputDate.vue",
+    "./DateConverter": "./DateConverter.js"
+  },
+  "files": [
+    "InputDate.vue",
+    "DateConverter.js",
+    "README.md",
+    "LICENSE",
+    "BILINGUAL_SUPPORT.md"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "datepicker",
+    "date-picker",
+    "hijri",
+    "gregorian",
+    "islamic-calendar",
+    "hijri-calendar",
+    "umm-al-qura",
+    "date-converter",
+    "calendar",
+    "component",
+    "standalone",
+    "no-dependencies",
+    "zero-dependencies",
+    "bilingual",
+    "arabic",
+    "english",
+    "rtl",
+    "ltr",
+    "i18n",
+    "localization",
+    "saudi-arabia",
+    "middle-east",
+    "islamic",
+    "muslim",
+    "ramadan",
+    "mobile-friendly",
+    "touch-optimized",
+    "responsive"
+  ],
+  "author": {
+    "name": "Hamdy Mohammed"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker/issues"
+  },
+  "homepage": "https://github.com/hamdymohamedak/vue-hijri-gregorian-datepicker#readme"
+}
