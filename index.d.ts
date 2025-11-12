@@ -95,6 +95,12 @@ export interface InputDateProps {
   cancelButtonClass?: string;
 
   /**
+   * Maximum width of the drawer/modal
+   * @default '360px'
+   */
+  drawerMaxWidth?: string;
+
+  /**
    * Validate on input
    * @default true
    */

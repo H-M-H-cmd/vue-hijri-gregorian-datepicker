@@ -108,6 +108,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  drawerMaxWidth: {
+    type: String,
+    default: '360px',
+  },
 });
 
 const model = defineModel({
@@ -735,7 +739,7 @@ onUnmounted(() => {
     <Teleport to="body">
       <transition name="drawer">
         <div v-if="showDrawer" class="p-drawer-mask" @click.self="showDrawer = false">
-          <div class="p-drawer p-drawer-bottom" :dir="isRTL ? 'rtl' : 'ltr'">
+          <div class="p-drawer p-drawer-bottom" :dir="isRTL ? 'rtl' : 'ltr'" :style="{ maxWidth: drawerMaxWidth }">
             <div class="flex flex-col h-full bg-white rounded-t-3xl">
                 <!-- Calendar Type Switcher -->
                 <div class="px-6 pt-4">

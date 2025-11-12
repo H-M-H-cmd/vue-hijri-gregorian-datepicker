@@ -276,6 +276,7 @@ const validateDate = () => {
 | `inputClass` | `String` | `''` | CSS class for input field (overrides default styles) |
 | `confirmButtonClass` | `String` | `''` | CSS class for confirm button (overrides default styles) |
 | `cancelButtonClass` | `String` | `''` | CSS class for cancel button (overrides default styles) |
+| `drawerMaxWidth` | `String` | `'360px'` | Maximum width of the drawer/modal (e.g., '500px', '100%') |
 
 ### v-model Bindings
 
@@ -456,6 +457,49 @@ You can also customize the confirm and cancel buttons:
 ```
 
 **Note**: Like `inputClass`, the button class props **completely replace** the default button styles. Make sure to include all necessary styles.
+
+### Customizing Drawer Width
+
+You can control the maximum width of the date picker drawer/modal:
+
+```vue
+<!-- Default width (360px) - Good for mobile -->
+<InputDate
+  name="date"
+  v-model="date"
+/>
+
+<!-- Wider drawer (500px) - Better for desktop -->
+<InputDate
+  name="date"
+  drawer-max-width="500px"
+  v-model="date"
+/>
+
+<!-- Full width on mobile, limited on desktop -->
+<InputDate
+  name="date"
+  drawer-max-width="100%"
+  v-model="date"
+/>
+
+<!-- Custom responsive width -->
+<InputDate
+  name="date"
+  drawer-max-width="min(90vw, 600px)"
+  v-model="date"
+/>
+```
+
+**Common Use Cases:**
+
+| Drawer Width | Best For |
+|--------------|----------|
+| `'360px'` (default) | Mobile-first design |
+| `'500px'` | Desktop applications |
+| `'100%'` | Full-width mobile experience |
+| `'min(90vw, 600px)'` | Responsive design (90% width, max 600px) |
+| `'clamp(320px, 80vw, 800px)'` | Advanced responsive (min 320px, max 800px) |
 
 ## 🌐 Browser Support
 
