@@ -273,7 +273,9 @@ const validateDate = () => {
 | `beginYearGregorian` | `Number` | `1900` | Start year for Gregorian calendar |
 | `containerClass` | `String` | `'date-input-container'` | CSS class for container |
 | `labelClass` | `String` | `'date-input-label'` | CSS class for label |
-| `inputClass` | `String` | `''` | CSS class for input field |
+| `inputClass` | `String` | `''` | CSS class for input field (overrides default styles) |
+| `confirmButtonClass` | `String` | `''` | CSS class for confirm button (overrides default styles) |
+| `cancelButtonClass` | `String` | `''` | CSS class for cancel button (overrides default styles) |
 
 ### v-model Bindings
 
@@ -366,7 +368,7 @@ You can override the default styles by targeting the component's classes:
 }
 ```
 
-Or use the `inputClass` prop to add custom classes to the input field:
+Or use the `inputClass` prop to completely override the default input styles:
 
 ```vue
 <InputDate
@@ -377,14 +379,83 @@ Or use the `inputClass` prop to add custom classes to the input field:
 ```
 
 ```css
-/* Your custom styles */
+/* Your custom styles - these will replace the default input styles */
 .my-custom-input {
+  width: 100%;
   border: 2px solid #3b82f6;
   border-radius: 12px;
-  padding: 12px;
+  padding: 12px 16px;
   font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-custom-input:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.my-custom-input:focus {
+  outline: none;
+  border-color: #1d4ed8;
 }
 ```
+
+**Note**: When `inputClass` is provided, it **completely replaces** the default `input-field` class. Make sure to include all necessary styles (width, padding, border, etc.) in your custom class.
+
+### Customizing Button Styles
+
+You can also customize the confirm and cancel buttons:
+
+```vue
+<InputDate
+  name="event_date"
+  confirm-button-class="custom-confirm-btn"
+  cancel-button-class="custom-cancel-btn"
+  v-model="date"
+/>
+```
+
+```css
+/* Custom confirm button */
+.custom-confirm-btn {
+  width: 100%;
+  height: 44px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.custom-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Custom cancel button */
+.custom-cancel-btn {
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-cancel-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+```
+
+**Note**: Like `inputClass`, the button class props **completely replace** the default button styles. Make sure to include all necessary styles.
 
 ## 🌐 Browser Support
 

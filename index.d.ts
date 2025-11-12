@@ -77,10 +77,22 @@ export interface InputDateProps {
   labelClass?: string;
 
   /**
-   * CSS class for input field
+   * CSS class for input field (overrides default styles)
    * @default ''
    */
   inputClass?: string;
+
+  /**
+   * CSS class for confirm button (overrides default styles)
+   * @default ''
+   */
+  confirmButtonClass?: string;
+
+  /**
+   * CSS class for cancel button (overrides default styles)
+   * @default ''
+   */
+  cancelButtonClass?: string;
 
   /**
    * Validate on input

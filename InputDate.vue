@@ -100,6 +100,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  confirmButtonClass: {
+    type: String,
+    default: '',
+  },
+  cancelButtonClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const model = defineModel({
@@ -712,7 +720,7 @@ onUnmounted(() => {
         type="text"
         :name="name"
         :id="name + '-id-field'"
-        :class="['input-field', { 'error': errors }, inputClass]"
+        :class="[inputClass ? inputClass : 'input-field', { 'error': errors }]"
         :value="displayValue"
         readonly
         @click="showDrawer = true"
@@ -842,10 +850,10 @@ onUnmounted(() => {
 
                 <!-- Footer with buttons -->
                 <div class="tw-flex tw-items-center tw-gap-4 tw-justify-between tw-px-4 tw-pb-4 tw-shrink-0 tw-border-b tw-border-gray-100">
-                  <button class="ui-button ui-button--primary tw-rounded-md w-100" @click="confirmDate">
+                  <button :class="confirmButtonClass ? confirmButtonClass : 'ui-button ui-button--primary tw-rounded-md w-100'" @click="confirmDate">
                     {{ t.confirm }}
                   </button>
-                  <button class="ui-button ui-button--secondary tw-rounded-md w-100" @click="showDrawer = false">
+                  <button :class="cancelButtonClass ? cancelButtonClass : 'ui-button ui-button--secondary tw-rounded-md w-100'" @click="showDrawer = false">
                     {{ t.cancel }}
                   </button>
                 </div>
