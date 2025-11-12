@@ -519,7 +519,7 @@ const contractDate = ref('');
 </template>
 ```
 
-### Example 3: Government Portal (Saudi Arabia)
+### Example 3: Legal data
 
 ```vue
 <script setup>
@@ -534,15 +534,15 @@ const gregorianDate = ref('');
 
 <template>
   <div class="form-section">
-    <h3>تاريخ إصدار الصك</h3>
+    <h3>تاريخ إصدار العقد</h3>
     <InputDate
-      name="deed_date"
+      name="contract_date"
       lang="ar"
       :default-calendar="'hijri'"
       :begin-year-hijri="1400"
       v-model:hijri-date="hijriDate"
       v-model:gregorian-date="gregorianDate"
-      placeholder="تاريخ إصدار الصك"
+      placeholder="تاريخ إصدار العقد"
       input-class="custom-input-style"
     />
 
@@ -554,7 +554,7 @@ const gregorianDate = ref('');
 </template>
 ```
 
-### Example 4: Age Restriction (18+ Only)
+### Example 4: Age Restriction (21+ Only)
 
 ```vue
 <script setup>
@@ -581,7 +581,7 @@ const validateAge = () => {
   <InputDate
     name="birth_date"
     lang="en"
-    :year-offset="18"
+    :year-offset="21"
     :begin-year-gregorian="1950"
     v-model="birthDate"
     :errors="error"
