@@ -19,8 +19,8 @@
  * @props {String} name - Input field name (required)
  * @props {String} [placeholder="اختر التاريخ"] - Placeholder text
  * @props {String|Boolean} [errors=false] - Validation errors to display
- * @props {String} [containerClass="tw-block tw-w-full tw-my-3"] - CSS class for container
- * @props {String} [labelClass="tw-mb-1"] - CSS class for label
+ * @props {String} [containerClass="hijri-datepicker-container"] - CSS class for container
+ * @props {String} [labelClass="hijri-datepicker-label"] - CSS class for label
  * @props {String} [inputClass=""] - CSS class for input field
  * @props {String} [label=""] - Label text
  * @props {Boolean} [showMonthNames=false] - Show full month names instead of numbers
@@ -53,11 +53,11 @@ const props = defineProps({
   },
   containerClass: {
     type: String,
-    default: 'tw-block tw-w-full tw-my-3',
+    default: 'hijri-datepicker-container',
   },
   labelClass: {
     type: String,
-    default: 'tw-mb-1',
+    default: 'hijri-datepicker-label',
   },
   label: {
     type: String,
@@ -870,6 +870,16 @@ onUnmounted(() => {
 </template>
 
 <style>
+/* Default Component Classes */
+.hijri-datepicker-container {
+  display: block;
+  width: 100%;
+}
+
+.hijri-datepicker-label {
+  display: block;
+}
+
 /* Tailwind utility classes - converted to CSS */
 .tw-block { display: block; }
 .tw-w-full { width: 100%; }
